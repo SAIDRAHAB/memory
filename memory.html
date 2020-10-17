@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Jeu de Memoire</title>
+    <style>
+        h1,h2{
+            text-align: center;
+        }
+        div{
+            width: 900px;
+            margin:auto;
+            padding:12px;
+            display:grid;
+            background: linear-gradient(45deg,#F10C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 10px;
+        }
+        img{
+            width:100%;
+            height:250px;
+        }
+        div span{
+            height:250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Memory Game</h1>
+    <h2>Score : <span id='score'>0</span></h2>
+    <h2>Time : <span id='timer'></span></h2>
+    <h2><input id="start" type="button" value="Commencer le jeu"></h2>
+    <div id='memory'>
+    </div>
+    
+    
+    <script src="memory.js"></script>
+</body>
+</html>
