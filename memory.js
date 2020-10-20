@@ -74,7 +74,6 @@ document.addEventListener('click', function(e){
 
 
 
-window.$('#exampleModal').modal('show');
     
 
   $(document).ready(function(){
@@ -85,6 +84,7 @@ window.$('#exampleModal').modal('show');
       Start();
     }
     );
+    $('#exampleModal').modal('show');
 
     function chrono(){
       secondes += 1;
