@@ -42,7 +42,7 @@
 <body>
 
   
-    <!-- Modal -->
+    <!-- Modal chargement de la page -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -53,9 +53,10 @@
               </button>
           </div>
           <div class="modal-body">
-            <p>Trouver toutes les cartes identiques 
-              Attention  : Le temps defile !!! Vous avez 1 minutes pour toutes les retournez :)
-            </p>
+            <div class="p-3 mb-2 bg-primary text-white">Trouver toutes les cartes identiques</div>
+            <div class="p-3 mb-2 bg-danger text-white">Attention  : Le temps defile !!! Vous avez 1 minute pour toutes les retourner :)</div>
+              
+            
           </div>
           <div class="modal-footer">
             <input id="start" type="button" class="btn btn-primary" value="Commencer le jeu" data-dismiss="modal">
@@ -64,6 +65,29 @@
           </div>
       </div>
       </div>
+<!-- Modal gagner -->
+      <div class="modal fade" id="modalgagner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Jeu de memoire </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+              <div id="txtmodalgagner" class="p-3 mb-2 bg-success text-white"></div>
+              
+                
+              
+            </div>
+            <div class="modal-footer">
+              <input id="rejouer" type="button" class="btn btn-danger" onclick="refresh()" value="Rejouer">
+              
+            </div>
+            </div>
+        </div>
+        </div>
 
     <h1>Jeu de Memoire</h1>
     

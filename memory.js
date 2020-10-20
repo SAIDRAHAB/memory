@@ -42,7 +42,15 @@ function check(){
     }
     score.textContent = points;
     step = memory.getElementsByTagName('img').length==0 ? 4 : 1;
-    if (step==4) score.textContent += ' Gagné !';
+    if (step==4){ 
+      score.textContent += ' Gagné !'
+     
+      $('#modalgagner').modal('show');
+      
+      let scoreafficher = document.getElementById('txtmodalgagner');
+      scoreafficher.textContent += ' Vous avez Gagné ! Votre score est de ' + points  ;
+      console.log(scoreafficher);
+    }
 }
 
 document.addEventListener('click', function(e){
