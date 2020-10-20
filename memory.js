@@ -12,16 +12,25 @@ var timer = document.getElementById('time');
     .sort( (a,b) => a[1]-b[1]) 
     .forEach(function(pic){
         let p = document.createElement('img');
+        console.log(p);
         p.src = 'pics/spr0.png';
         p.src0 = 'pics/spr'+pic[0]+'.png';
         p.clicked = false;
         memory.appendChild(p);
+        
+        
+      
+        
+      
     });
-
+    function refresh() { window.location.reload(); }// recharge la page 
+  
+    
 function check(){
     clearTimeout(timer);
     p1.clicked = p2.clicked = false;
     if (p1.src==p2.src){
+      console.log(p1,p2);
         // remove pics
         memory.replaceChild(document.createElement('span'), p1);
         memory.replaceChild(document.createElement('span'), p2);
@@ -41,6 +50,7 @@ document.addEventListener('click', function(e){
     switch(step){
         case 1: // click first image
             if (t.tagName=='IMG' && !t.clicked){
+              
                 t.clicked = true;
                 t.src = t.src0;
                 p1 = t;
@@ -62,65 +72,47 @@ document.addEventListener('click', function(e){
     }
 });
 
- //inspiration 
 
 
+window.$('#exampleModal').modal('show');
+    
 
-
-
-$(document).ready(function(){
-  var secondes = 0;
-
-  var on = false;
-  var reset = false;
- 
-  $("#start").click(function(){
-    Start();
-
-  });
- 
-
-  function chrono(){
-    secondes += 1;
-   
-    if(secondes>59){
-     clearTimeout(timerID);
-      secondes = 0;
-      reset();
-      points=0;
+  $(document).ready(function(){
+    var secondes = 0;
+    var on = false;
+    var reset = false;
+    $("#start").click(function(){
+      Start();
     }
-   
-    if(secondes<61){
-      $("#timer").html(secondes);
-    }
-      
-  }
- 
-  function Start(){
-    $("#start").hide();
-    if(on===false){
-      timerID = setInterval(chrono, 1000);
-      on = true;
-      reset = false;
-    }
-  } 
- 
-/*   function Stop(){
-    if(on===true){
-      on = false;
+    );
+
+    function chrono(){
+      secondes += 1;
+    
+      if(secondes>59){
       clearTimeout(timerID);
+        
+        refresh();
+        
+      }
+    
+      if(secondes<61){
+        $("#timer").html(secondes);
+        
+      }
+        
     }
-  } */
   
-  function Reset(){
-    if(reset===false)
-    {
-      clearInterval(timerID);
-      secondes = 0;
-      
-      $("#timer").html("00");
-      reset = true;
-    }
-  }
- 
-}); 
+    function Start(){
+      $("#start").hide();
+      if(on==false){
+        timerID = setInterval(chrono, 1000);
+        on = true;
+        reset = false;
+      }
+    } 
+  
+    
+
+  
+  }); 
